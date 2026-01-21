@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Academy — платформа для страховых агентов</title>
+  <meta name="description" content="Платформа №1 для профессиональных страховых агентов: оформление полисов, ОСАГО, кросс‑продукты, урегулирование убытков и выплаты комиссии без бюрократии." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">Агент Академия</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav__toggle" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__list">
+          <li><a href="#for-whom">Для кого</a></li>
+          <li><a href="#benefits">Преимущества</a></li>
+          <li><a href="#products">Продукты</a></li>
+          <li><a href="#about">О компании</a></li>
+          <li><a href="#team">Команда</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#login" class="btn btn--ghost">Войти</a>
+        <a href="#lead-form" class="btn btn--primary">Регистрация</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Платформа №1 для профессиональных страховых агентов</p>
+          <h1 class="hero__title">Зарабатывайте больше на страховании без бюрократии</h1>
+          <p class="hero__subtitle">
+            Оформляйте ОСАГО и кросс‑продукты в одной системе, ведите клиента от полиса до урегулирования убытка и
+            получайте комиссию в пару кликов.
+          </p>
+          <div class="hero__actions">
+            <a href="#lead-form" class="btn btn--primary btn--lg">Зарегистрироваться</a>
+            <button class="btn btn--ghost btn--lg" type="button" data-scroll-to="#for-whom">
+              Узнать подробнее
+            </button>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__value">20+ лет</div>
+              <div class="stat__label">в страховании</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">95%</div>
+              <div class="stat__label">одобрение в сегменте ОСАГО</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">3 дня</div>
+              <div class="stat__label">средний срок выплаты комиссии</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <h2 class="hero__card-title">Быстрый старт за 1 день</h2>
+          <ol class="hero__steps">
+            <li>Оставьте заявку на подключение к платформе</li>
+            <li>Куратор настроит сегментацию под ваш район</li>
+            <li>Оформляйте первые полисы и получайте КВ</li>
+          </ol>
+          <form id="login" class="hero__form" autocomplete="off">
+            <h3 class="hero__form-title">Уже работаете с нами?</h3>
+            <p class="hero__form-text">Оставьте контакт — куратор поможет восстановить доступ.</p>
+            <div class="field">
+              <label for="hero-name">ФИО</label>
+              <input id="hero-name" name="name" type="text" placeholder="Иван Иванов" required />
+            </div>
+            <div class="field">
+              <label for="hero-phone">Телефон</label>
+              <input id="hero-phone" name="phone" type="tel" placeholder="+7 999 999-99-99" required />
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Связаться с куратором</button>
+            <p class="form__hint">
+              Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR WHOM -->
+    <section id="for-whom" class="section section--alt">
+      <div class="container">
+        <div class="section__badge">Для кого платформа</div>
+        <div class="section__header">
+          <h2>Если вы профессиональный страховой агент — платформа для вас</h2>
+          <p>Agent Academy создана специально для агентов в районных центрах и малых городах.</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="card card--check">
+            <div class="card__number">01</div>
+            <h3>Опыт от 2 лет в страховании</h3>
+            <p>Вы давно работаете с клиентами и готовы нарастить доход с помощью цифровой платформы.</p>
+          </article>
+          <article class="card card--check">
+            <div class="card__number">02</div>
+            <h3>Получаете комиссию и бонусы</h3>
+            <p>У вас прибыльный портфель и вы готовы развивать его за счёт новых продуктов.</p>
+          </article>
+          <article class="card card--check">
+            <div class="card__number">03</div>
+            <h3>Работаете в районном центре</h3>
+            <p>Клиенты рядом, а офисов страховщиков нет — платформа закрывает все процессы онлайн.</p>
+          </article>
+          <article class="card card--check">
+            <div class="card__number">04</div>
+            <h3>Ведёте клиента от полиса до выплаты</h3>
+            <p>Оформление, изменения, расторжение и урегулирование — всё в одной системе.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits" class="section">
+      <div class="container">
+        <div class="section__badge">Преимущества</div>
+        <div class="section__header">
+          <h2>Предлагайте выбор клиенту и зарабатывайте больше</h2>
+          <p>Собрали лучшие условия страховых компаний в одной платформе — вы работаете быстрее, клиенты довольны сервисом.</p>
+        </div>
+
+        <div class="benefits">
+          <div class="benefits__block">
+            <h3>Предоставьте клиенту выбор</h3>
+            <ul class="list list--icon">
+              <li>Сравнение цен и условий от нескольких страховых компаний в одном окне</li>
+              <li>Готовые предложения по ОСАГО и кросс‑продуктам</li>
+              <li>Клиент не уходит к конкурентам — всё уже есть у вас</li>
+            </ul>
+          </div>
+
+          <div class="benefits__block">
+            <h3>Гибкая сегментация ОСАГО под ваш район</h3>
+            <ul class="list list--icon">
+              <li>Категории A, B, C, F, мотоциклы и спецтехника</li>
+              <li>Одобрение до 95% по ключевым сегментам</li>
+              <li>Возможность оформить сложных клиентов в перестраховочный пул</li>
+            </ul>
+          </div>
+
+          <div class="benefits__block benefits__block--accent">
+            <h3>Зарабатывайте больше</h3>
+            <div class="kpi">
+              <div class="kpi__item">
+                <span class="kpi__value">10–20%</span>
+                <span class="kpi__label">скидка при переходе из другой СК</span>
+              </div>
+              <div class="kpi__item">
+                <span class="kpi__value">до 80%</span>
+                <span class="kpi__label">комиссия по кросс‑продуктам</span>
+              </div>
+              <div class="kpi__item">
+                <span class="kpi__value">+20%</span>
+                <span class="kpi__label">КВ для самозанятых</span>
+              </div>
+            </div>
+            <p>Настраивайте цены и наполнение кросс‑продуктов под своих клиентов.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section section--alt">
+      <div class="container">
+        <div class="section__badge">Продукты</div>
+        <div class="section__header">
+          <h2>Все ключевые страховые продукты в одной платформе</h2>
+          <p>От ОСАГО до ипотеки и страхования от укуса клеща — оформление занимает минуты.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--product">
+            <h3>ОСАГО для ФЛ и ЮЛ</h3>
+            <ul class="list list--bullets">
+              <li>Адаптированные тарифы под районный центр</li>
+              <li>Все формы юрлиц, включая ИП и КФХ</li>
+              <li>Оплата по счёту и банковской картой</li>
+              <li>Большой справочник моделей ТС</li>
+              <li>Изменения, расторжения и урегулирование — онлайн</li>
+            </ul>
+          </article>
+
+          <article class="card card--product">
+            <h3>МиниКАСКО и доп. защита</h3>
+            <ul class="list list--bullets">
+              <li>Защита при ДТП по вине водителя без ОСАГО</li>
+              <li>Страховая сумма до 400 000 ₽</li>
+              <li>Без предстрахового осмотра</li>
+              <li>Подходит для районов с высоким процентом водителей без полиса</li>
+            </ul>
+          </article>
+
+          <article class="card card--product">
+            <h3>Нештатные случаи и ипотека</h3>
+            <ul class="list list--bullets">
+              <li>Страхование от несчастных случаев (дети, взрослые, спортсмены)</li>
+              <li>Ипотечное страхование по всем основным банкам</li>
+              <li>Страхование от укуса клеща: покрытие до 2 млн ₽</li>
+              <li>Договоры с ЦРБ в вашем районе</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="about__content">
+          <div class="section__badge">О компании</div>
+          <h2>Делаем страхование проще с 2005 года</h2>
+          <p>
+            Более 20 лет в страховании, последние 10 — с фокусом на районный бизнес. С 2021 года развиваем
+            технологичную платформу Agent Academy, которая помогает агентам оформлять полисы, вносить изменения и
+            урегулировать убытки без бюрократии.
+          </p>
+          <p>
+            Мы объединяем только те страховые компании, с кем удобно и надёжно работать, и делаем всё, чтобы ваша
+            работа стала более удобной, эффективной и прибыльной.
+          </p>
+          <div class="about__tags">
+            <span>Собственная цифровая платформа</span>
+            <span>Резидент «Сколково»</span>
+            <span>Аккредитация Минцифры</span>
+            <span>Регулярно посещаем районы</span>
+          </div>
+        </div>
+        <div class="about__panel">
+          <h3>Почему агентам удобно с нами</h3>
+          <ul class="list list--icon">
+            <li>Личный куратор в вашем регионе, всегда на связи</li>
+            <li>Поддержка в вашем часовом поясе</li>
+            <li>Простая и быстрая платформа без лишних полей</li>
+            <li>Прозрачная мотивационная программа и бонусы за объём</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section section--alt">
+      <div class="container">
+        <div class="section__badge">Команда</div>
+        <div class="section__header">
+          <h2>Лично знакомы с каждым агентом</h2>
+          <p>Кураторы и служба поддержки помогают вам в ежедневной работе с клиентами.</p>
+        </div>
+
+        <div class="grid grid--4 team">
+          <article class="card card--person">
+            <h3>Андрей Глухов</h3>
+            <p class="card__role">Генеральный директор, Москва</p>
+          </article>
+          <article class="card card--person">
+            <h3>Сергей Гринвальд</h3>
+            <p class="card__role">Директор по продуктам, Москва</p>
+          </article>
+          <article class="card card--person">
+            <h3>Мария Никитина</h3>
+            <p class="card__role">Аналитика и методология продаж</p>
+          </article>
+          <article class="card card--person card--person-more">
+            <h3>Кураторы по всей России</h3>
+            <p class="card__role">Красноярск, Новосибирск, Иркутск, Хабаровск и другие города</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section__badge">Отзывы</div>
+        <div class="section__header">
+          <h2>Что говорят агенты о работе с платформой</h2>
+          <p>Сотни агентов в районных центрах уже зарабатывают с Agent Academy.</p>
+        </div>
+
+        <div class="grid grid--3 reviews">
+          <article class="card card--review">
+            <p class="card__text">
+              «Через платформу работаю уже два года — удобная и быстрая программа, большой выбор страховых компаний.
+              Мотивационная система КВ реально стимулирует!»
+            </p>
+            <p class="card__author">Юлия В., Хабаровский край</p>
+          </article>
+          <article class="card card--review">
+            <p class="card__text">
+              «Работать в программе легко, все доступно и понятно. Оформление полиса занимает минуты, а деньги по
+              убыткам приходят клиенту уже через неделю.»
+            </p>
+            <p class="card__author">Наталья Г., Иркутская область</p>
+          </article>
+          <article class="card card--review">
+            <p class="card__text">
+              «Кураторы 24/7 на связи, помогают решить любые вопросы. Комиссия выводится быстро, процессы — от
+              расторжений до ипотеки — работают чётко.»
+            </p>
+            <p class="card__author">Антон К., Новосибирская область</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--alt">
+      <div class="container">
+        <div class="section__badge">Вопрос‑ответ</div>
+        <div class="section__header">
+          <h2>Частые вопросы агентов</h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item" open>
+            <summary>Чем ваши условия лучше прямого договора со страховщиком?</summary>
+            <p>
+              Мы крупный партнёр с устойчивым и прибыльным портфелем. За счёт этого условия по тарифам и комиссии
+              часто выгоднее, чем по прямому договору со страховщиком.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Что нужно, чтобы начать работать?</summary>
+            <p>
+              Заполните форму регистрации на сайте. Куратор свяжется с вами, проверит данные, настроит сегментацию и
+              цены под ваш регион и проведёт короткое обучение по платформе.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Как работает урегулирование, если нет офиса страховщика в районе?</summary>
+            <p>
+              В платформе есть раздел «Урегулирование убытков»: загружаете документы и реквизиты клиента, получаете
+              расчёт и соглашение. В 90% случаев достаточно фото; в сложных — организуем выезд оценщика.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Сколько раз в месяц можно получать комиссию?</summary>
+            <p>
+              Комиссия появляется в системе сразу после оформления полиса. Выводите её в разделе «Финансы» — сколько
+              угодно раз в месяц.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / LEAD FORM -->
+    <section id="contacts" class="section section--accent">
+      <div class="container contacts">
+        <div class="contacts__content">
+          <div class="section__badge">Свяжитесь с нами</div>
+          <h2>Готовы зарабатывать больше без бюрократии?</h2>
+          <p>
+            Оставьте заявку. Куратор в вашем регионе свяжется с вами, поможет настроить личный кабинет и покажет, как
+            зарабатывать больше на текущем портфеле.
+          </p>
+          <ul class="list list--icon">
+            <li>Работа с проверенными страховыми компаниями</li>
+            <li>Единый размер комиссии и дополнительные бонусы</li>
+            <li>Вывод вознаграждения без задержек</li>
+          </ul>
+        </div>
+
+        <form id="lead-form" class="form" autocomplete="off">
+          <div class="form__row">
+            <div class="field">
+              <label for="lead-name">ФИО</label>
+              <input id="lead-name" name="name" type="text" placeholder="Иван Иванов" required />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="lead-phone">Телефон</label>
+              <input id="lead-phone" name="phone" type="tel" placeholder="+7 999 999-99-99" required />
+            </div>
+            <div class="field">
+              <label for="lead-email">Электронная почта</label>
+              <input id="lead-email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="lead-city">Город проживания</label>
+              <input id="lead-city" name="city" type="text" placeholder="Новосибирск" required />
+            </div>
+          </div>
+          <div class="form__row form__row--checkbox">
+            <label class="checkbox">
+              <input type="checkbox" name="agree" required />
+              <span>Согласен с политикой конфиденциальности</span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+          <p class="form__hint">
+            Исследования осуществляются ООО «Агент Академи» при грантовой поддержке фонда «Сколково».
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__info">
+        <p>ООО «АГЕНТ АКАДЕМИ»</p>
+        <p>Юридический адрес: 117418, Москва, Нахимовский пр-т, д. 47, к. 2</p>
+        <p>ИНН 7727473161, ОГРН 1217700441727</p>
+      </div>
+      <div class="footer__links">
+        <a href="#">Политика безопасности</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Пользовательское соглашение</a>
+      </div>
+      <div class="footer__meta">
+        <p>© 2021–2025 Agent Academy. Все права защищены.</p>
+        <p>Сайт разработан. Email: <a href="mailto:hello@agentacademy.ru">hello@agentacademy.ru</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
+
