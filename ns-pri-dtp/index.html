@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НС при ДТП - Agent Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-logo {
+            margin-bottom: 40px;
+        }
+
+        .hero-logo svg {
+            width: 280px;
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        .product-name {
+            color: #236192;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #666;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-image {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #236193;
+            color: #fff;
+            padding: 18px 50px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(35,97,146,0.15);
+        }
+
+        .cta-button:hover {
+            background: #1a4a6f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(35,97,146,0.25);
+        }
+
+        /* Phone Number */
+        .phone-section {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid #236192;
+        }
+
+        .phone-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .phone-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #236192;
+            text-decoration: none;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 38px;
+            font-weight: 600;
+            text-align: center;
+            margin: 60px 0 40px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        /* Pricing Cards */
+        .pricing-cards {
+            background: #f8f9fa;
+            padding: 80px 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .pricing-card--popular {
+            border: 3px solid #236192;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #236192;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card__header {
+            padding: 28px 24px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card__name {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card__price {
+            font-size: 42px;
+            font-weight: 700;
+            color: #236192;
+            line-height: 1;
+        }
+
+        .pricing-card__price span {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .pricing-card__period {
+            font-size: 14px;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        /* Insurance Block - Main */
+        .pricing-card__insurance {
+            padding: 24px;
+            background: linear-gradient(135deg, #f0f7fc 0%, #e8f4f8 100%);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .insurance-badge {
+            display: inline-block;
+            background: #236192;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .insurance-sum {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .insurance-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .insurance-risks {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .insurance-risks li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .insurance-risks li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .insurance-partner {
+            font-size: 12px;
+            color: #888;
+            padding-top: 12px;
+            border-top: 1px dashed #ccc;
+        }
+
+        /* Services Toggle */
+        .pricing-card__services {
+            padding: 0;
+        }
+
+        .services-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: #fafafa;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            transition: all 0.2s ease;
+        }
+
+        .services-toggle:hover {
+            background: #f0f0f0;
+        }
+
+        .services-toggle.active {
+            background: #f0f0f0;
+        }
+
+        .services-toggle.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .services-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .services-content.open {
+            max-height: 500px;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 16px 24px 20px;
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .services-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            color: #555;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .service-value {
+            font-weight: 600;
+            color: #236192;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Payments Section */
+        .payments-section {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .payments-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .payment-item {
+            display: flex;
+            align-items: stretch;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .payment-risk {
+            background: linear-gradient(135deg, #236192 0%, #1a4a6f 100%);
+            color: white;
+            padding: 28px 32px;
+            min-width: 320px;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .payment-risk span {
+            font-size: 13px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-bottom: 6px;
+        }
+
+        .payment-value {
+            flex: 1;
+            padding: 28px 36px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 15px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .payment-value strong {
+            color: #236192;
+            font-weight: 700;
+        }
+
+        .payment-value ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .payment-value ul li {
+            padding: 6px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .payment-value ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #236192;
+            font-weight: bold;
+        }
+
+        .payment-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #236192;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .payment-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Claims Section */
+        .claims-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .claims-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: -20px auto 50px;
+        }
+
+        .claims-steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .claim-step {
+            display: flex;
+            gap: 24px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            background: linear-gradient(135deg, #236192 0%, #1a4a6f 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .step-content p strong {
+            color: #236192;
+        }
+
+        .step-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .blur-overlay {
+            position: absolute;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .step-hint {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fc 100%);
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .hint-icon {
+            font-size: 24px;
+        }
+
+        .step-hint strong {
+            color: #236192;
+        }
+
+        /* Detail Blocks */
+        .details-section {
+            padding: 60px 20px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .detail-block {
+            background: #fff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .detail-block h3 {
+            font-size: 22px;
+            color: #236192;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .detail-block p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .detail-block ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .detail-block li {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #236192 0%, #1a4a6f 100%);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            font-size: 32px;
+            color: #236192;
+            margin-bottom: 20px;
+        }
+
+        .footer-cta p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Documents Section */
+        .documents-section {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .document-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .document-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .document-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #236192;
+            margin-bottom: 10px;
+        }
+
+        .document-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #236192;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 2px solid #236192;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .document-link:hover {
+            background: #236192;
+            color: #fff;
+        }
+
+        .document-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .document-link:hover svg {
+            transform: translateY(2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 50px 20px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero-left {
+                max-width: 100%;
+            }
+
+            .hero-logo svg {
+                width: 200px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                font-size: 18px;
+                padding: 16px 40px;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 26px;
+                margin: 40px 0 30px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing-card__price {
+                font-size: 36px;
+            }
+
+            .insurance-sum {
+                font-size: 28px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-item {
+                flex-direction: column;
+            }
+
+            .payment-risk {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 20px 24px;
+            }
+
+            .payment-value {
+                padding: 20px 24px;
+            }
+
+            .claim-step {
+                flex-direction: column;
+                padding: 24px;
+            }
+
+            .step-number {
+                width: 48px;
+                height: 48px;
+                min-width: 48px;
+                font-size: 20px;
+            }
+
+            .claims-subtitle {
+                font-size: 16px;
+            }
+
+            .phone-number {
+                font-size: 24px;
+            }
+
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .document-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-logo">
+                        <svg width="1697" height="444" viewBox="0 0 1697 444" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M405.192 443.057H0L143.137 2.63477H262.055L405.192 443.057ZM110.738 365.714H293.66L201.608 85.2071L110.738 365.714Z" fill="#236193"/>
+                            <path d="M545.07 181.05L602.75 3.57417H639.847L697.527 181.05H670.782L657.595 140.995H584.756L571.815 181.05H545.07ZM592.644 116.838H649.707L620.991 29.3328L592.644 116.838Z" fill="#236193"/>
+                            <path d="M794.812 184.748C747.238 184.748 712.359 150.485 712.359 92.3122C712.359 35.0022 746.252 0 794.812 0C836.469 0 861.119 20.5823 870.239 54.7218L844.11 59.4052C836.962 38.2066 820.693 24.6494 796.291 24.403C758.577 24.1565 739.843 51.6406 739.72 92.3122C739.597 132.984 758.577 159.975 796.291 160.221C826.733 160.591 844.357 142.474 847.931 109.567H813.422V88.8613H875.292C875.662 91.9424 875.785 98.1048 875.785 99.3373C875.785 148.759 846.452 184.748 794.812 184.748Z" fill="#236193"/>
+                            <path d="M907.745 181.05V3.57417H1021.13V27.8539H933.503V77.6457H1006.34V101.925H933.503V156.77H1021.13V181.05H907.745Z" fill="#236193"/>
+                            <path d="M1058.13 181.05V3.57417H1084.25L1171.64 135.449V3.57417H1197.76V181.05H1171.64L1084.25 49.0524V181.05H1058.13Z" fill="#236193"/>
+                            <path d="M1283.8 181.05V27.8539H1224.77V3.57417H1368.6V27.8539H1309.56V181.05H1283.8Z" fill="#236193"/>
+                            <path d="M545.07 436.118L607.926 258.642H625.551L688.407 436.118H673.371L657.472 391.503H575.882L560.106 436.118H545.07ZM580.565 378.069H652.788L616.554 276.143L580.565 378.069Z" fill="#236193"/>
+                            <path d="M783.939 439.816C730.819 439.816 703.212 401.732 703.212 347.38C703.212 293.028 730.819 254.945 783.939 254.945C825.227 254.945 851.109 278.115 860.352 313.857L845.686 317.431C838.044 287.729 817.339 268.872 783.939 268.872C740.309 268.872 718.741 301.163 718.371 347.38C717.878 393.598 740.309 425.889 783.939 425.889C817.339 425.889 838.044 407.032 845.686 377.329L860.352 380.904C851.109 416.645 825.227 439.816 783.939 439.816Z" fill="#236193"/>
+                            <path d="M877.607 436.118L940.463 258.642H958.087L1020.94 436.118H1005.91L990.008 391.503H908.419L892.643 436.118H877.607ZM913.102 378.069H985.325L949.09 276.143L913.102 378.069Z" fill="#236193"/>
+                            <path d="M1050.42 436.118V258.642H1103.3C1107.24 258.642 1118.09 258.642 1126.59 259.875C1166.4 265.421 1185.99 302.025 1185.99 347.38C1185.99 392.859 1166.4 429.34 1126.59 434.886C1118.21 436.118 1107.12 436.118 1103.3 436.118H1050.42ZM1065.34 422.191H1103.3C1110.69 422.191 1119.32 421.822 1124.86 420.836C1157.89 415.043 1170.84 385.34 1170.84 347.38C1170.84 309.297 1157.77 279.594 1124.86 273.925C1119.32 272.939 1110.2 272.569 1103.3 272.569H1065.34V422.191Z" fill="#236193"/>
+                            <path d="M1220.78 436.118V258.642H1330.47V272.446H1234.96V339.862H1315.68V353.666H1234.96V422.315H1330.47V436.118H1220.78Z" fill="#236193"/>
+                            <path d="M1367.55 436.118V258.642H1380.74L1453.46 415.659L1525.43 258.642H1539.11V435.872H1525.19V291.303L1459.13 436.118H1447.54L1381.36 291.303V436.118H1367.55Z" fill="#236193"/>
+                            <path d="M1622.91 436.118V361.184L1563.75 258.642H1580.14L1630.05 344.915L1679.85 258.642H1696.24L1637.2 361.184V436.118H1622.91Z" fill="#236193"/>
+                        </svg>
+                    </div>
+                    <h1>Учебный материал по продукту <span class="product-name">«НС при ДТП»</span></h1>
+                    <p class="hero-subtitle">Кросс-продукт к ОСАГО любой страховой компании</p>
+                    <a href="#content" class="cta-button">Приступить к изучению</a>
+                </div>
+                <div class="hero-right">
+                    <img src="./img/hero.png" alt="НС при ДТП" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards Section -->
+    <section class="pricing-cards" id="content">
+        <div class="container">
+            <h2 class="section-title">Что входит в продукт:</h2>
+
+            <div class="pricing-grid">
+                <!-- Пакет 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 1</span>
+                        <div class="pricing-card__price">800 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">50 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">1 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">1 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">1 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">1 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пакет 2 -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 2</span>
+                        <div class="pricing-card__price">1 000 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">100 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">2 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">2 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">2 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">2 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пакет 3 -->
+                <div class="pricing-card pricing-card--popular">
+                    <div class="popular-badge">Популярный</div>
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 3</span>
+                        <div class="pricing-card__price">1 200 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">150 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">3 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">3 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">3 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">3 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пакет 4 -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 4</span>
+                        <div class="pricing-card__price">1 500 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">200 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">4 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">4 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">4 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">4 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пакет 5 -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 5</span>
+                        <div class="pricing-card__price">1 800 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">250 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">5 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">5 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">5 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">5 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пакет 6 -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__name">Пакет 6</span>
+                        <div class="pricing-card__price">2 000 <span>₽</span></div>
+                        <div class="pricing-card__period">на 12 месяцев</div>
+                    </div>
+
+                    <div class="pricing-card__insurance">
+                        <div class="insurance-badge">Страхование от НС при ДТП</div>
+                        <div class="insurance-sum">300 000 ₽</div>
+                        <div class="insurance-label">страховая сумма</div>
+                        <ul class="insurance-risks">
+                            <li>Смерть в результате НС</li>
+                            <li>Инвалидность в результате НС</li>
+                            <li>Телесные повреждения</li>
+                        </ul>
+                                            </div>
+
+                    <div class="pricing-card__services">
+                        <button class="services-toggle" onclick="toggleServices(this)">
+                            <span>Бонус: Дополнительные сервисы</span>
+                            <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="services-content">
+                            <ul class="services-list">
+                                <li>
+                                    <span class="service-name">Устная консультация по вопросам заключения/изменения/продления/расторжения договора ОСАГО</span>
+                                    <span class="service-value">6 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Устная консультация по порядку, срокам и документам для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">6 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подготовка документов для урегулирования страхового случая по ОСАГО</span>
+                                    <span class="service-value">6 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Подбор экспертных компаний для проведения независимой экспертизы ТС</span>
+                                    <span class="service-value">6 в год</span>
+                                </li>
+                                <li>
+                                    <span class="service-name">Предоставление типовых форм документов по вопросам ОСАГО и урегулирования страховых случаев</span>
+                                    <span class="service-value">Безлимитно</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Преимущества продукта</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Идеальный кросс-продукт к ОСАГО</h3>
+                    <p>С реальной клиентской ценностью</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Можно продавать к ОСАГО любой СК</h3>
+                    <p>Работает с полисами любой страховой компании</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Удобно и быстро оформить</h3>
+                    <p>В 1 клик в системе</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Payments Section -->
+    <section class="payments-section">
+        <div class="container">
+            <h2 class="section-title">Размеры страховой выплаты по договору страхования пассажиров ТС от несчастного случая</h2>
+
+            <div class="payments-list">
+                <div class="payment-item">
+                    <div class="payment-risk">
+                        <span>по риску</span>
+                        «Смерть в результате несчастного случая»
+                    </div>
+                    <div class="payment-value">
+                        <strong>100%</strong> страховой суммы
+                    </div>
+                </div>
+
+                <div class="payment-item">
+                    <div class="payment-risk">
+                        <span>по риску</span>
+                        «Инвалидность в результате несчастного случая»
+                    </div>
+                    <div class="payment-value">
+                        <ul>
+                            <li>При установлении <strong>1-й группы</strong> инвалидности — <strong>100%</strong> страховой суммы</li>
+                            <li>При установлении <strong>2-й группы</strong> инвалидности — <strong>75%</strong> от страховой суммы</li>
+                            <li>При установлении <strong>3-й группы</strong> инвалидности — <strong>50%</strong> от страховой суммы</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="payment-item">
+                    <div class="payment-risk">
+                        <span>по риску</span>
+                        «Телесные повреждения в результате несчастного случая»
+                    </div>
+                    <div class="payment-value">
+                        <strong>% от страховой суммы</strong> в соответствии с Таблицей размеров страховых выплат
+                        <a href="./docs/payments.pdf" class="payment-link" target="_blank">Посмотреть подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Claims Section -->
+    <section class="claims-section">
+        <div class="container">
+            <h2 class="section-title">Как урегулировать убыток?</h2>
+            <p class="claims-subtitle">Простой процесс в личном кабинете. Поддержка поможет на каждом этапе.</p>
+
+            <div class="claims-steps">
+                <div class="claim-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Откройте информацию о договоре</h3>
+                        <p>В личном кабинете найдите нужный договор и нажмите кнопку <strong>«Урегулировать убыток»</strong></p>
+                        <div class="step-image">
+                            <div class="screenshot-container">
+                                <img src="./img/step1.png" alt="Шаг 1 - Урегулировать убыток">
+                                <!-- Blur overlays для персональных данных -->
+                                <!-- ФИО в шапке -->
+                                <div class="blur-overlay" style="top: 1%; left: 64%; width: 28%; height: 5%;"></div>
+                                <!-- Госномер авто -->
+                                <div class="blur-overlay" style="top: 28%; left: 37%; width: 12%; height: 4%;"></div>
+                                <!-- ФИО страхователя -->
+                                <div class="blur-overlay" style="top: 32%; left: 26%; width: 22%; height: 4%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="claim-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Выберите договор</h3>
+                        <p>Выберите договор <strong>НС при ДТП</strong> для урегулирования убытка</p>
+                        <div class="step-image">
+                            <div class="screenshot-container">
+                                <img src="./img/step2.png" alt="Шаг 2 - Выбор договора">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="claim-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Следуйте инструкциям</h3>
+                        <p>Наша поддержка подскажет все дальнейшие шаги и поможет собрать необходимые документы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="documents-section">
+        <div class="container">
+            <h2 class="section-title">Документы и материалы</h2>
+
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">📋</div>
+                    <h3>Пример сертификата</h3>
+                    <p>Образец сертификата страхования НС при ДТП для ознакомления</p>
+                    <a href="./docs/certificate.pdf" class="document-link" target="_blank">
+                        <span>Скачать PDF</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📖</div>
+                    <h3>Таблица выплат</h3>
+                    <p>Полная таблица страховых выплат по телесным повреждениям и инвалидности</p>
+                    <a href="./docs/payments.pdf" class="document-link" target="_blank">
+                        <span>Скачать PDF</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Готовы начать продажу?</h2>
+            <p>Изучите все материалы и начните предлагать продукт своим клиентам</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleServices(button) {
+            const content = button.nextElementSibling;
+            button.classList.toggle('active');
+            content.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
